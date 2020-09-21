@@ -3,24 +3,41 @@
 
 
 def is_even_len(string: str) -> bool:
-    pass
+    if len( string ) % 2  == 0:
+        return True
+    else:
+        return False
 
 
 def remove_third_char(string: str) -> str:
-    pass
+    return string[ :2] + string[3: ]
 
 
 def replace_char(string: str, old_char: str, new_char: str) -> str:
-    pass
+    for i in range(len(string)):
+        if string[i] == old_char:
+            string = string[:i] + new_char + string[i + 1:]
+
+    return string
 
 
 def get_number_of_char(string: str, char: str) -> int:
-    pass
+    count = -1
+    for current_char in string:
+        if current_char == char:
+            count += 1
+
+    return count
 
 
 def get_number_of_words(sentence: str, word: str) -> int:
-    pass
+    words = sentence.split()
+    count = 0
+    for current_word in words:
+        if current_word == word:
+            count += 1
 
+    return count
 
 def main() -> None:
     chaine = "Bonjour!"
